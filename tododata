@@ -1,0 +1,27 @@
+[
+  {
+    "TodoListId": "1",
+    "Title": "Task 1",
+    "Details": "Play nintendo"
+  },
+  {
+    "TodoListId": "2",
+    "Title": "Task 2",
+    "Details": "Eat dunkaroos"
+  },
+  {
+    "TodoListId": "3",
+    "Title": "Task 3",
+    "Details": "Buy baby shampoo"
+  },
+  {
+    "TodoListId": "4",
+    "Title": "Task 4",
+    "Details": "Feed fish"
+  },
+  {
+    "TodoListId": "5",
+    "Title": "Task 5",
+    "Details": "Listen to sabbath on 78 speed man"
+  }
+]
