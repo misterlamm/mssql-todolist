@@ -1,17 +1,10 @@
 
-USE master
-GO
-IF NOT EXISTS (
-   SELECT name
-   FROM sys.databases
-   WHERE name = N'TodoDB'
-)
 CREATE DATABASE [TodoDB]
-GO
+
 
 IF OBJECT_ID('dbo.Todos', 'U') IS NOT NULL
 DROP TABLE dbo.Todos
-GO
+
 
 CREATE TABLE dbo.Todos
 (
@@ -22,7 +15,7 @@ CREATE TABLE dbo.Todos
    created_at   DATETIME NOT NULL,
    completed_at DATETIME  NULL
 );
-GO
+
 
 INSERT INTO Todos
    ([TodoListId],[Title],[Details],[Priority],[created_at],[completed_at])
@@ -32,18 +25,16 @@ VALUES
    ( 3, N'Task 3', N'Buy baby shampoo', 3, '20010507 02:11:33 PM', NULL),
    ( 4, N'Task 4', N'Feed fish', 4, '20030609 10:22:00 PM',  NULL),  
    ( 5, N'Task 5', N'Listen to sabbath on 78 speed, man', 1, '20120105 07:21:43 AM', '20170619 10:34:09 AM')   
-GO   
+  
 
 SELECT COUNT(completed_at) as CompleteTasks FROM dbo.Todos;
 SELECT e.TodoListId, e.Title, e.Details, e.Priority, e.created_at, e.completed_at
 FROM dbo.Todos as e
-GO
 
--- SELECT COUNT()
-
-UPDATE Todos
-   SET Details = 'Get groceries', created_at = '20170618 10:34:09 AM'
+UPDATE Todos SET Details = 'Get groceries', created_at = '20170618 10:34:09 AM'
  WHERE TodoListId = 1;
 
-DELETE FROM Todos 
-WHERE completed_at = true
+
+
+
+DELETE FROM todos WHERE completed_at IS NOT NULL;
